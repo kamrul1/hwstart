@@ -25,7 +25,39 @@
             <RowDefinition Height="0.85*"/>
             <RowDefinition Height="0.10*"/>
         </Grid.RowDefinitions>
-        <GridView Grid.Row="1" ItemsSource="{Binding OrderItems}">
+        <GridView Grid.Row="1" ItemsSource="{Binding OrderItems}" >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="400" Padding="10">
+                        <Border Height="250" Padding="20" Background="#FF202024">
+                            <ListBox Background="#FF202024" ItemsSource="{Binding Items}" >
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" Style="{ThemeResource SubtitleTextBlockStyle}" />
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Border>
+                        <Border Height="80" Padding="20" Background="Gray">
+                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">
+                                <Run Text="{Binding Table.Description  }" />
+                                <Run Text=" [" />
+                                <Run Text="{Binding Table.Id}"/>
+                                <Run Text="] "/>
+                            </TextBlock>
+                        </Border>
+                        <Border Height="80" Padding="30" Background="Gray">
+                            <TextBlock Text="{Binding SpecialRequests}" />
+                        </Border>
+                        <Border Height="80" Padding="5" Background="Gray">
+                            <Button Content="Delete" HorizontalAlignment="Center" Background="DarkGray" />
+                        </Border>
+                    </StackPanel>
+
+                </DataTemplate>
+
+            </GridView.ItemTemplate>
+
         </GridView>
         <Button Content="Clear All Orders" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" />
     </Grid>
