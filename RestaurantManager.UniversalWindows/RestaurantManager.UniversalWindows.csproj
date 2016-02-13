@@ -138,9 +138,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RestaurantManager.Extensions\RestaurantManager.Extensions.csproj">
+      <Project>{4f755db3-7d73-47a6-9cdc-6874c58229e1}</Project>
+      <Name>RestaurantManager.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RestaurantManager.Models\RestaurantManager.Models.csproj">
       <Project>{7ea2b405-e454-4f0c-a8c3-d6bf3f814f5c}</Project>
       <Name>RestaurantManager.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestaurantManager.ViewModels\RestaurantManager.ViewModels.csproj">
+      <Project>{841ef212-8808-46ff-980a-cd8c8b5dd90b}</Project>
+      <Name>RestaurantManager.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
